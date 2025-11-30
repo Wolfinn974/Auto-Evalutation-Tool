@@ -1,0 +1,8 @@
+{
+    "duration_minutes": 90,
+    "qcm_count": 5,
+    "exercise_count": 5,
+    "passing_score": 65,
+    "penalty_start_seconds": 30,
+    "penalty_increment_seconds": 30
+}

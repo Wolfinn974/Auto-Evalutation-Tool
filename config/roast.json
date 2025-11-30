@@ -1,0 +1,113 @@
+{
+  "global": {
+    "wrong_output": [
+      "Non… juste non. On va reprendre ensemble, ok ?",
+      "La sortie attendue est partie prendre un café on dirait.",
+      "J’ai relu trois fois pour être sûre… c’est toujours pas ça.",
+      "L’ordinateur a soufflé. Littéralement.",
+      "On va dire que c’est… conceptuel. Mais pas fonctionnel."
+    ],
+    "wrong_filename": [
+      "Tu changes le nom du fichier ? Pourquoi ? Curiosité scientifique ?",
+      "Le fichier s’appelle PAS comme ça. C’est écrit noir sur blanc.",
+      "On ne renomme pas des fichiers au hasard, c’est pas Pokémon ici.",
+      "J’ai dit ‘fizzbuzz.py’, pas ‘fizzbuzz_final_v2_OKdef_OK.py’.",
+      "Le premier boss, c’est littéralement le NOM DU FICHIER, frère."
+    ],
+    "runtime_error": [
+      "Ton code a implosé comme les prix des loyers à Bruxelles.",
+      "Erreur d’exécution. L’ordi a tapé ‘??’ dans le vide.",
+      "C’était censé marcher, mais ça a décidé de mourir.",
+      "Exception levée. Comme mon stress en fin de mois.",
+      "Ça a crashé. Mais t’inquiète, moi aussi parfois."
+    ]
+  },
+
+  "printalphabet": [
+    "Alphabet incomplet ? On réécrit l’histoire alors.",
+    "Il manque des lettres… t’as ragequit au milieu ?",
+    "On fait l’alphabet, pas un scrabble freestyle.",
+    "J’ai compté. Y’a 26 lettres, pas 17.",
+    "Si tu supprimes encore une lettre, l’Académie Française attaque."
+  ],
+
+  "printreversealphabet": [
+    "Reverse alphabet… mais là c’est reverse logique.",
+    "On a dit Z → A, pas Z → n'importe quoi.",
+    "C’est un alphabet inversé ou un cri du cœur ?",
+    "On sent que t’as tenté quelque chose… mais quoi ?",
+    "Les lettres sont timides, elles veulent l’ordre inverse."
+  ],
+
+  "digitswap": [
+    "Il fallait juste inverser deux chiffres… DEUX.",
+    "T’as échangé les bonnes valeurs avec les mauvaises intentions.",
+    "Digit swap, pas ‘digit chaos’.",
+    "Tu m’as fait un Rubik’s cube numérique.",
+    "C’est pas un échange, c’est un braquage de chiffres."
+  ],
+
+  "countvowel": [
+    "Les voyelles crient à l’injustice.",
+    "J’ai jamais vu quelqu’un compter aussi mal depuis la caisse du Carrefour.",
+    "Tu tries les voyelles comme si elles t’avaient trahi.",
+    "a e i o u y → et toi t’en as vu combien ?",
+    "Le mot avait des voyelles… ton code les a ghost."
+  ],
+
+  "minicalculatrice": [
+    "La calculatrice a fait un burn-out.",
+    "Je ne sais pas ce que t’as calculé, mais c’était pas ça.",
+    "On fait des maths, pas des prédictions astrologiques.",
+    "Si ta calculatrice faisait ça en vrai, tu la jettes.",
+    "Résultat incorrect. Même ma TI-82 t’aurait jugé."
+  ],
+
+  "is_it_positive": [
+    "Positif ? Négatif ? Là c’est surtout confus.",
+    "Le zéro voudrait avoir une discussion avec toi.",
+    "Ton code hésite plus que moi devant un menu Deliveroo.",
+    "Les mathématiques pleurent.",
+    "C’était simple. Très simple. Trop simple pour ça."
+  ],
+
+  "guess_the_number": [
+    "42. Toujours 42. Comment t’as raté ça ??",
+    "T’as visé à côté du sens de la vie.",
+    "Soit trop haut, soit trop bas… mais jamais juste.",
+    "Ton code a deviné ‘non’.",
+    "Le jeu te juge. Moi aussi un peu."
+  ],
+
+  "mystery_word": [
+    "Le mot secret : python. Ton code : pyWHAT ?",
+    "Les lettres sont en place… sauf dans ton output.",
+    "Mystery word solved ? Non, mystère encore plus grand maintenant.",
+    "T’as compté les lettres comme si tu faisais de la divination.",
+    "Là c’est Sherlock Holmes mais en version discount."
+  ],
+
+  "10_first_prime": [
+    "C’était des nombres premiers, pas premiers venus.",
+    "J’ai vu un nombre non premier se glisser. Ça pardonne pas.",
+    "Les maths viennent de t’envoyer un avertissement.",
+    "Ton algo cherche des nombres premiers, mais trouve des touristiques.",
+    "Tu m’as donné les 10 chiffres du loto, pas 10 nombres premiers."
+  ],
+
+  "currency_converter": [
+    "Taux de conversion freestyle on dirait.",
+    "Tu fais des conversions ou des paris sportifs ?",
+    "1€ = 1.07$. Toi t’as fait 1€ = ???",
+    "La banque centrale veut te parler.",
+    "Ton taux d’erreur est plus haut que le taux de conversion."
+  ],
+
+  "ecommerce_paypal_commission": [
+    "C’est PayPal, pas ‘PayFail’.",
+    "Les commissions ne s’inventent pas, elles se calculent.",
+    "Tu donnes trop au client. PayPal ne ferait JAMAIS ça.",
+    "Les maths et ton code sont en guerre ouverte.",
+    "Ton calcul ressemble au marketing d’un dropshipper."
+  ]
+}

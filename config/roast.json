@@ -109,5 +109,12 @@
     "Tu donnes trop au client. PayPal ne ferait JAMAIS ça.",
     "Les maths et ton code sont en guerre ouverte.",
     "Ton calcul ressemble au marketing d’un dropshipper."
+  ],
+  "qcm": [
+    "C’était littéralement dans le cours d’hier… je t’assure.",
+    "Je pense que t’as cliqué au hasard. Ça se voit.",
+    "Même un random.choice aurait eu plus de chance.",
+    "J’ai relu ta réponse, j’ai soufflé, j’ai relu. Toujours pas bon.",
+    "On va dire que… l’intention y était ? Mais pas la réponse."
   ]
 }

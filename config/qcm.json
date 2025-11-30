@@ -1,0 +1,64 @@
+{
+  "questions": [
+    {
+      "id": "q1",
+      "question": "What does the function len() do in Python?",
+      "choices": [
+        "A: Returns the length of an object",
+        "B: Converts a number to a string",
+        "C: Deletes an element",
+        "D: Creates a loop"
+      ],
+      "answer": "A",
+      "points": 5
+    },
+    {
+      "id": "q2",
+      "question": "Which keyword is used to create a function in Python?",
+      "choices": [
+        "A: func",
+        "B: def",
+        "C: function",
+        "D: lambdaonly"
+      ],
+      "answer": "B",
+      "points": 5
+    },
+    {
+      "id": "q3",
+      "question": "What will print(type(3.5)) output?",
+      "choices": [
+        "A: <class 'float'>",
+        "B: <class 'int'>",
+        "C: <class 'str'>",
+        "D: <class 'double'>"
+      ],
+      "answer": "A",
+      "points": 5
+    },
+    {
+      "id": "q4",
+      "question": "What is the result of 3 * 'hi' in Python?",
+      "choices": [
+        "A: Error",
+        "B: 'hi3'",
+        "C: 'hihihi'",
+        "D: ['hi', 'hi', 'hi']"
+      ],
+      "answer": "C",
+      "points": 5
+    },
+    {
+      "id": "q5",
+      "question": "Which of the following is a valid list in Python?",
+      "choices": [
+        "A: (1, 2, 3)",
+        "B: {1, 2, 3}",
+        "C: [1, 2, 3]",
+        "D: <1, 2, 3>"
+      ],
+      "answer": "C",
+      "points": 5
+    }
+  ]
+}

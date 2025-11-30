@@ -1,0 +1,7 @@
+{
+    "name": "10_first_prime",
+    "difficulty": "medium",
+    "tags": ["math", "loop"],
+    "points": 20,
+    "variations": ["first_n_primes", "prime_check"]
+}

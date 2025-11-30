@@ -1,0 +1,7 @@
+{
+    "name": "printreversealphabet",
+    "difficulty": "easy",
+    "tags": ["string", "basics"],
+    "points": 12,
+    "variations": ["uppercase", "subset"]
+}

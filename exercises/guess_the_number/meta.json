@@ -1,0 +1,7 @@
+{
+    "name": "guess_the_number",
+    "difficulty": "easy",
+    "tags": ["conditions"],
+    "points": 12,
+    "variations": ["random_target", "range_feedback"]
+}

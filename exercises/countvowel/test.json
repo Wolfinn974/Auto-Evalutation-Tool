@@ -1,0 +1,7 @@
+{
+    "tests": [
+        { "input": "hello\n", "output": "2\n" },
+        { "input": "sky\n", "output": "1\n" },
+        { "input": "aeiouy\n", "output": "6\n" }
+    ]
+}

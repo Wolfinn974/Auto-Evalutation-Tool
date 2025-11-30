@@ -1,0 +1,7 @@
+{
+    "tests": [
+        { "input": "10\n", "output": "too low\n" },
+        { "input": "99\n", "output": "too high\n" },
+        { "input": "42\n", "output": "correct\n" }
+    ]
+}

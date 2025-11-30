@@ -1,0 +1,7 @@
+{
+    "name": "ecommerce_paypal_commission",
+    "difficulty": "medium",
+    "tags": ["math", "float"],
+    "points": 20,
+    "variations": ["custom_rate", "round_to_cent"]
+}

@@ -1,0 +1,7 @@
+{
+    "tests": [
+        { "input": "7\n",    "output": "positive\n" },
+        { "input": "-3\n",   "output": "negative\n" },
+        { "input": "0\n",    "output": "zero\n" }
+    ]
+}

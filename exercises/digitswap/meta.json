@@ -1,0 +1,7 @@
+{
+    "name": "digitswap",
+    "difficulty": "easy",
+    "tags": ["string", "math"],
+    "points": 15,
+    "variations": ["3_digits", "strip_zeros"]
+}

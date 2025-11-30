@@ -1,0 +1,7 @@
+{
+    "tests": [
+        { "input": "100\n", "output": "96.8\n" },
+        { "input": "10\n", "output": "9.41\n" },
+        { "input": "0\n",  "output": "0.0\n" }
+    ]
+}

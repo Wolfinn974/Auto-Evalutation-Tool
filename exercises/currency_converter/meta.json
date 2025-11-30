@@ -1,0 +1,7 @@
+{
+    "name": "currency_converter",
+    "difficulty": "easy",
+    "tags": ["math", "float"],
+    "points": 12,
+    "variations": ["custom_rate", "round_output"]
+}

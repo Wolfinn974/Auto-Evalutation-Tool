@@ -1,0 +1,12 @@
+{
+    "name": "fizzbuzz",
+    "difficulty": "medium",
+    "tags": ["loop", "conditions"],
+    "points": 20,
+    "variations": [
+        "classic",
+        "reverse_order",
+        "range_start_custom",
+        "custom_words"
+    ]
+}

@@ -1,0 +1,7 @@
+{
+    "name": "mystery_word",
+    "difficulty": "medium",
+    "tags": ["string", "loop"],
+    "points": 18,
+    "variations": ["custom_secret", "case_insensitive"]
+}

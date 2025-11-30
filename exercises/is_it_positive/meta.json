@@ -1,0 +1,7 @@
+{
+    "name": "is_it_positive",
+    "difficulty": "easy",
+    "tags": ["conditions"],
+    "points": 10,
+    "variations": ["strict_positive", "yes_no_format"]
+}

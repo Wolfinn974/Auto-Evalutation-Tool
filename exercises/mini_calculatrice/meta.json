@@ -1,0 +1,7 @@
+{
+    "name": "minicalculatrice",
+    "difficulty": "medium",
+    "tags": ["math", "conditions"],
+    "points": 18,
+    "variations": ["integer_division", "no_float"]
+}

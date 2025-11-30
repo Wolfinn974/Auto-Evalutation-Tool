@@ -1,0 +1,8 @@
+{
+    "tests": [
+        { "input": "5\n+\n3\n", "output": "8\n" },
+        { "input": "5\n*\n3\n", "output": "15\n" },
+        { "input": "9\n-\n4\n", "output": "5\n" },
+        { "input": "10\n/\n4\n", "output": "2.5\n" }
+    ]
+}

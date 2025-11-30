@@ -1,0 +1,7 @@
+{
+    "tests": [
+        { "input": "python\n", "output": "6\n" },
+        { "input": "pythzz\n", "output": "4\n" },
+        { "input": "aaaaaa\n", "output": "1\n" }
+    ]
+}

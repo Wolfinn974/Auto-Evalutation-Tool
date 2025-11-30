@@ -1,0 +1,7 @@
+{
+    "name": "countvowel",
+    "difficulty": "easy",
+    "tags": ["string", "loop"],
+    "points": 15,
+    "variations": ["uppercase", "ignore_y", "accented"]
+}

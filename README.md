@@ -1,5 +1,18 @@
 # 🧪 Auto-Evaluation Tool — V1.0.0
 
+![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
+![Version](https://img.shields.io/badge/version-v1.0.0-brightgreen.svg)
+![Status](https://img.shields.io/badge/status-stable-success.svg)
+![License](https://img.shields.io/badge/license-MIT-yellow.svg)
+![Education](https://img.shields.io/badge/made%20for-education-blueviolet.svg)
+![Roast Mode](https://img.shields.io/badge/roast-mode_enabled-red.svg)
+![Sandbox](https://img.shields.io/badge/sandbox-secure-orange.svg)
+![Chaotic Good Teacher](https://img.shields.io/badge/teacher-chaotic%20good-ff69b4.svg)
+![Mini Kattis](https://img.shields.io/badge/engine-mini--kattis-lightgrey.svg)
+![Student Tears](https://img.shields.io/badge/student_tears-++%20collected-9cf.svg)
+![Security](https://img.shields.io/badge/security-path_traversal_proof-success.svg)
+![Powered by Suffering](https://img.shields.io/badge/powered_by-student_suffering-ff0000.svg)
+
 Un outil d'auto-évaluation automatisé conçu pour mes cours de programmation.  
 Ce système corrige automatiquement les exercices, applique un système de points,
 déclenche un mode *cooldown* avec feedbacks personnalisés (et parfois des roasts 👀),

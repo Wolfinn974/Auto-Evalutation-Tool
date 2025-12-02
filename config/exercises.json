@@ -1,12 +1,12 @@
 {
     "exercises": [
-        { "name": "fizzbuzz", "language": "python", "weight": 20 },
-        { "name": "printalphabet", "language": "python", "weight": 12 },
-        { "name": "printreversealphabet", "language": "python", "weight": 12 },
-        { "name": "countvowel", "language": "python", "weight": 15 },
-        { "name": "digitswap", "language": "python", "weight": 15 },
-        { "name": "mystery_word", "language": "python", "weight": 18 },
-        { "name": "currency_converter", "language": "python", "weight": 12 },
-        { "name": "ecommerce_paypal", "language": "python", "weight": 12 }
+        { "name": "fizzbuzz",              "language": "python", "weight": 20, "points": 20 },
+        { "name": "printalphabet",         "language": "python", "weight": 12, "points": 12 },
+        { "name": "printreversealphabet",  "language": "python", "weight": 12, "points": 12 },
+        { "name": "countvowel",            "language": "python", "weight": 15, "points": 15 },
+        { "name": "digitswap",             "language": "python", "weight": 15, "points": 15 },
+        { "name": "mystery_word",          "language": "python", "weight": 18, "points": 18 },
+        { "name": "currency_converter",    "language": "python", "weight": 12, "points": 12 },
+        { "name": "ecommerce_paypal",      "language": "python", "weight": 12, "points": 12 }
     ]
 }

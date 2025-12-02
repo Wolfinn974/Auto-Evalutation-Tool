@@ -4,5 +4,7 @@
     "exercise_count": 5,
     "passing_score": 65,
     "penalty_start_seconds": 30,
-    "penalty_increment_seconds": 30
+    "penalty_increment_seconds": 30,
+    "penalty_mode": "linear",
+    "git_repo": ""
 }

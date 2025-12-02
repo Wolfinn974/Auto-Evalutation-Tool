@@ -1,41 +1,37 @@
-import time
-import json
-import random
 import os
-from datetime import datetime, timedelta
-
-from eval_core.qcm import QCMEngine
+import json
+from eval_core.utils import safe_print, log
 from eval_core.file_loader import StudentFileManager
 from eval_core.sandbox_runner import SandboxRunner
+from eval_core.scoring import ScoringSystem
 from eval_core.comparator import Comparator
 from eval_core.cooldown import CooldownManager
-from eval_core.scoring import ScoringSystem
-from eval_core.utils import log
+from eval_core.git_manager import GitManager
+
 
 class EvaluationEngine:
 
     def __init__(self, student_name):
         self.student = student_name
-        self.start_time = None
-        self.end_time = None
 
-        # Load configs
+        # Load config files
         self.config = self._load_json("config/eval_config.json")
-        self.exo_bank = self._load_json("config/exercises.json")["exercises"]
-        self.qcm_bank = self._load_json("config/qcm.json")
-        self.roasts = self._load_json("config/roasts.json")#TODO
+        self.qcm_data = self._load_json("config/qcm.json")
+        self.roasts = self._load_json("config/roasts.json")
+        self.exercises_data = self._load_json("config/exercises.json")
 
-        # Points
-        self.scoring = ScoringSystem(self.config)#TODO
+        # Core systems
+        self.file_manager = StudentFileManager(self.student)
+        self.sandbox = SandboxRunner()
+        self.scoring = ScoringSystem(self.config)
+        self.comparator = Comparator()
+        self.cooldown = CooldownManager(self.config)
 
-        # Components
-        self.qcm_engine = QCMEngine(self.qcm_bank, self.config)#done
-        self.file_manager = StudentFileManager(self.student)#TODO
-        self.runner = SandboxRunner()#TODO
-        self.cooldown = CooldownManager(self.config)#TODO
+        # Git sync
+        self.git = GitManager(self.config["git_repo"])
+        self.git.clone_if_needed()
 
-        # Prepare output
-        self.selected_exercises = []
+        # Result structure
         self.results = {
             "student": self.student,
             "qcm_score": 0,
@@ -44,140 +40,161 @@ class EvaluationEngine:
             "passed": False
         }
 
-    # -----------------------------
-    # INITIAL SETUP
-    # -----------------------------
+        log(f"Starting evaluation session for {self.student}")
 
+
+    # ---------------------------------------------------------
+    # Load JSON helper
+    # ---------------------------------------------------------
     def _load_json(self, path):
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"Missing config file: {path}")
         with open(path, "r", encoding="utf-8") as f:
             return json.load(f)
 
+    # ---------------------------------------------------------
+    # Load test.json for an exercise
+    # ---------------------------------------------------------
+    def _load_tests(self, exo_name):
+        path = os.path.join("exercises", exo_name, "test.json")
+        if not os.path.exists(path):
+            raise FileNotFoundError(f"Missing test.json for {exo_name}")
+        with open(path, "r", encoding="utf-8") as f:
+            return json.load(f)["tests"]
+
+    # ---------------------------------------------------------
+    # RUN FULL EVALUATION
+    # ---------------------------------------------------------
+    def run(self):
+        self.prepare_session()
+        self.run_qcm()
+        self.run_exercises()
+        self.finalize()
+
+
+    # ---------------------------------------------------------
+    # PREPARE FOLDERS
+    # ---------------------------------------------------------
     def prepare_session(self):
-        log(f"Starting evaluation session for {self.student}")
-        self.start_time = datetime.now()
-        self.end_time = self.start_time + timedelta(minutes=self.config["duration_minutes"])
+        self.file_manager.prepare_student_directory()
 
-        # Ensure student folder exists
-        self.file_manager.prepare_student_directory()#mkdir
 
-        # Select QCM
-        self.qcm_engine.pick_questions()
-
-        # Select exercises
-        self.selected_exercises = self.pick_exercises()
-
-    # -----------------------------
-    # SELECT EXERCISES
-    # -----------------------------
-
-    def pick_exercises(self):
-        count = self.config["exercise_count"]
-        # Weighted random pick
-        population = self.exo_bank
-        weights = [exo["points"] for exo in population]
-        chosen = random.choices(population, weights=weights, k=count)
-
-        log(f"Selected exercises: {', '.join([c['name'] for c in chosen])}")
-        return chosen
-
-    # -----------------------------
-    # RUN QCM
-    # -----------------------------
-
+    # ---------------------------------------------------------
+    # QCM SECTION
+    # ---------------------------------------------------------
     def run_qcm(self):
-        log("Running QCM...")
-        qcm_score = self.qcm_engine.run()
+        safe_print("\n===== QCM =====")
 
-        self.results["qcm_score"] = qcm_score
-        log(f"QCM complete: {qcm_score} points")
+        questions = self.qcm_data["questions"][: self.config["qcm_count"]]
+        total_qcm_points = 0
 
-    # -----------------------------
-    # RUN EXERCISES
-    # -----------------------------
+        for q in questions:
+            safe_print(f"\n{q['question']}")
+            for choice in q["choices"]:
+                safe_print("  " + choice)
 
+            ans = input("\nYour answer: ").strip().upper()
+
+            if ans == q["answer"]:
+                total_qcm_points += q["points"]
+            else:
+                roast = self.cooldown.roast("qcm_wrong", self.roasts)
+                safe_print(roast)
+
+        self.results["qcm_score"] = total_qcm_points
+        self.scoring.set_qcm_points(total_qcm_points)
+        log(f"QCM scored {total_qcm_points} pts")
+
+
+    # ---------------------------------------------------------
+    # EXERCISES SECTION
+    # ---------------------------------------------------------
     def run_exercises(self):
-        comparator = Comparator()
+        safe_print("\n===== EXERCISES =====")
 
-        for exo in self.selected_exercises:
+        selected_exos = self.exercises_data["exercises"][: self.config["exercise_count"]]
 
+        for exo in selected_exos:
             exo_name = exo["name"]
-            log(f"Evaluating exercise: {exo_name}")
+            language = exo["language"]
+            points = exo["points"]
 
-            success = False
+            safe_print(f"\n--- Exercise: {exo_name} ---")
+
+            # Show description
+            desc_path = os.path.join("exercises", exo_name, "description.md")
+            if os.path.exists(desc_path):
+                with open(desc_path, "r", encoding="utf-8") as f:
+                    safe_print(f.read())
+
             attempt = 1
 
-            while datetime.now() < self.end_time:
-
-                # Load student file or wait for submission
+            while True:
+                # WAIT FOR FILE
                 file_path = self.file_manager.wait_for_submission(exo_name)
 
-                # Check filename validity
-                if not self.file_manager.check_expected_filename(exo_name, file_path):#security
-                    roast = self.cooldown.roast("wrong_filename", self.roasts)
-                    log(f"Wrong filename for {exo_name}. Roast: {roast}")
+                if file_path is None:
+                    safe_print(self.cooldown.roast("wrong_filename", self.roasts, exo_name))
                     self.cooldown.apply_penalty(attempt)
                     attempt += 1
                     continue
 
-                # Execute file
-                output = self.runner.run(file_path, exo["language"])
+                # LOAD TESTS
+                tests = self._load_tests(exo_name)
 
-                # Runtime error
-                if output["error"]:
-                    roast = self.cooldown.roast("runtime_error", self.roasts, exo_name)
-                    log(f"Runtime error: {roast}")
-                    self.cooldown.apply_penalty(attempt)
-                    attempt += 1
-                    continue
+                all_passed = True
 
-                # Compare with expected
-                if comparator.compare(exo_name, output["stdout"]):
-                    # Success!
-                    points = exo["points"]
+                for test in tests:
+                    input_data = test.get("input", "")
+                    expected = test["output"]
+
+                    result = self.sandbox.run(
+                        file_path=file_path,
+                        language=language,
+                        input_data=input_data
+                    )
+
+                    # Runtime fail?
+                    if result.exit_code != 0 or result.stderr.strip() != "":
+                        log(f"Runtime error: {result.stderr}")
+                        safe_print(self.cooldown.roast("runtime", self.roasts, exo_name))
+                        self.cooldown.apply_penalty(attempt)
+                        attempt += 1
+                        all_passed = False
+                        break
+
+                    # Output comparison
+                    if not self.comparator.compare(result.stdout, expected):
+                        log("Wrong output.")
+                        safe_print(self.cooldown.roast("wrong_output", self.roasts, exo_name))
+                        self.cooldown.apply_penalty(attempt)
+                        attempt += 1
+                        all_passed = False
+                        break
+
+                # SUCCESS !!
+                if all_passed:
+                    safe_print(f"✔️ Correct ! +{points} pts")
                     self.results["exercises"].append({
                         "exercise": exo_name,
                         "success": True,
                         "points": points
                     })
                     self.scoring.add_points(points)
-                    log(f"{exo_name} success ! Earned {points} points.")
-                    success = True
                     break
-                else:#failed oh man ! :(
-                    roast = self.cooldown.roast("wrong_output", self.roasts, exo_name)
-                    log(f"{exo_name} KO: {roast}")
-                    self.cooldown.apply_penalty(attempt)
-                    attempt += 1
 
-            # If time ran out or never succeeded
-            if not success:
-                self.results["exercises"].append({
-                    "exercise": exo_name,
-                    "success": False,
-                    "points": 0
-                })
-                log(f"{exo_name} FAILED (time or errors)")
 
-    # -----------------------------
-    # FINAL SCORING & EXPORT
-    # -----------------------------
-
+    # ---------------------------------------------------------
+    # FINALIZATION
+    # ---------------------------------------------------------
     def finalize(self):
         total = self.scoring.total_points()
         self.results["total_score"] = total
-        self.results["passed"] = total >= self.config["passing_score"]
+        self.results["passed"] = (total >= self.config["passing_score"])
 
-        log(f"Final score: {total} — Passed: {self.results['passed']}")
-
-        # Export results
         self.file_manager.save_results(self.results)
+        self.git.push_results(self.student)
 
-    # -----------------------------
-    # MAIN PIPELINE
-    # -----------------------------
-
-    def run(self):
-        self.prepare_session()
-        self.run_qcm()
-        self.run_exercises()
-        self.finalize()
+        safe_print("\n===== END OF EVALUATION =====")
+        safe_print(f"Total score: {total}")
+        safe_print("PASSED!" if self.results["passed"] else "FAILED...")

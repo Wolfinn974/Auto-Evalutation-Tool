@@ -1,0 +1,230 @@
+=== SYSTEM LOG ===
+[2025-12-02 20:22:13] Application launched by: test
+[2025-12-02 20:22:13] [CRITICAL ERROR] [Errno 2] No such file or directory: 'config/roasts.json'
+[2025-12-02 20:22:46] Application launched by: test
+[2025-12-02 20:22:46] Repo already exists, pulling latest changes.
+[2025-12-02 20:22:47] [GIT ERROR] pull -> remote: Write access to repository not granted.
+fatal: unable to access 'https://github.com/Wolfinn974/Auto-Evalutation-Tool.git/': The requested URL returned error: 403
+
+[2025-12-02 20:22:47] Starting evaluation session for test
+[2025-12-02 20:22:47] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 20:22:47] QCM: Selected 5 questions.
+[2025-12-02 20:22:47] [CRITICAL ERROR] 'points'
+[2025-12-02 20:28:43] Application launched by: test
+[2025-12-02 20:28:43] Repo already exists, pulling latest changes.
+[2025-12-02 20:28:44] [GIT ERROR] pull -> remote: Write access to repository not granted.
+fatal: unable to access 'https://github.com/Wolfinn974/Auto-Evalutation-Tool.git/': The requested URL returned error: 403
+
+[2025-12-02 20:28:44] Starting evaluation session for test
+[2025-12-02 20:28:44] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 20:28:44] QCM: Selected 5 questions.
+[2025-12-02 20:28:44] [CRITICAL ERROR] 'points'
+[2025-12-02 20:30:26] Application launched by: test
+[2025-12-02 20:30:26] Repo already exists, pulling latest changes.
+[2025-12-02 20:30:27] [GIT ERROR] pull -> remote: Write access to repository not granted.
+fatal: unable to access 'https://github.com/Wolfinn974/Auto-Evalutation-Tool.git/': The requested URL returned error: 403
+
+[2025-12-02 20:30:27] Starting evaluation session for test
+[2025-12-02 20:30:27] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 20:30:27] QCM: Selected 5 questions.
+[2025-12-02 20:30:27] [CRITICAL ERROR] 'points'
+[2025-12-02 21:20:35] Application launched by: test
+[2025-12-02 21:20:35] Repo already exists, pulling latest changes.
+[2025-12-02 21:20:35] Starting evaluation session for test
+[2025-12-02 21:20:35] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 21:20:35] QCM: Selected 5 questions.
+[2025-12-02 21:20:35] Selected exercises: mystery_word, ecommerce_paypal, countvowel, ecommerce_paypal, ecommerce_paypal
+[2025-12-02 21:20:35] Running QCM...
+[2025-12-02 21:20:46] QCM correct answer for q1.
+[2025-12-02 21:20:56] QCM correct answer for q4.
+[2025-12-02 21:21:01] QCM wrong answer for q3. Expected A, got C.
+[2025-12-02 21:21:11] QCM wrong answer for q2. Expected B, got D.
+[2025-12-02 21:21:15] QCM correct answer for q5.
+[2025-12-02 21:21:15] QCM finished with score 15.
+[2025-12-02 21:21:15] Scoring: QCM points set to 15
+[2025-12-02 21:21:15] QCM complete: 15 points
+[2025-12-02 21:21:15] Evaluating exercise: mystery_word
+[2025-12-02 21:29:18] Application launched by: test
+[2025-12-02 21:29:18] Repo already exists, pulling latest changes.
+[2025-12-02 21:29:18] Starting evaluation session for test
+[2025-12-02 21:29:18] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 21:29:18] QCM: Selected 5 questions.
+[2025-12-02 21:29:18] Selected exercises: countvowel, mystery_word, countvowel, printalphabet, ecommerce_paypal
+[2025-12-02 21:29:18] Running QCM...
+[2025-12-02 21:29:28] QCM correct answer for q5.
+[2025-12-02 21:29:34] QCM correct answer for q3.
+[2025-12-02 21:29:38] QCM correct answer for q2.
+[2025-12-02 21:29:43] QCM correct answer for q1.
+[2025-12-02 21:29:45] QCM correct answer for q4.
+[2025-12-02 21:29:45] QCM finished with score 25.
+[2025-12-02 21:29:45] Scoring: QCM points set to 25
+[2025-12-02 21:29:45] QCM complete: 25 points
+[2025-12-02 21:29:45] Evaluating exercise: countvowel
+[2025-12-02 21:30:14] Applying cooldown: 30s (attempt 1)
+[2025-12-02 21:31:58] Applying cooldown: 60s (attempt 2)
+[2025-12-02 21:33:06] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/countvowel.py
+[2025-12-02 21:33:06] Runtime error: a e i o u y → et toi t’en as vu combien ?
+[2025-12-02 21:33:06] Applying cooldown: 90s (attempt 3)
+[2025-12-02 21:34:51] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/countvowel.py
+[2025-12-02 21:34:51] Runtime error: Le mot avait des voyelles… ton code les a ghost.
+[2025-12-02 21:34:51] Applying cooldown: 120s (attempt 4)
+[2025-12-02 21:39:49] Application launched by: test
+[2025-12-02 21:39:49] Repo already exists, pulling latest changes.
+[2025-12-02 21:39:49] Starting evaluation session for test
+[2025-12-02 21:39:49] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 21:39:49] QCM: Selected 5 questions.
+[2025-12-02 21:39:49] Selected exercises: countvowel, printreversealphabet, fizzbuzz, digitswap, fizzbuzz
+[2025-12-02 21:39:49] Running QCM...
+[2025-12-02 21:39:55] QCM correct answer for q1.
+[2025-12-02 21:39:59] QCM correct answer for q2.
+[2025-12-02 21:40:04] QCM correct answer for q3.
+[2025-12-02 21:40:08] QCM correct answer for q5.
+[2025-12-02 21:40:11] QCM correct answer for q4.
+[2025-12-02 21:40:11] QCM finished with score 25.
+[2025-12-02 21:40:11] Scoring: QCM points set to 25
+[2025-12-02 21:40:11] QCM complete: 25 points
+[2025-12-02 21:40:11] Evaluating exercise: countvowel
+[2025-12-02 21:41:00] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/countvowel.py
+[2025-12-02 21:41:00] [SANDBOX ERROR] 'tuple' object has no attribute 'stdout'
+[2025-12-02 21:41:00] Runtime error: Les voyelles crient à l’injustice.
+[2025-12-02 21:41:00] Applying cooldown: 30s (attempt 1)
+[2025-12-02 21:42:18] Evaluation interrupted by test
+[2025-12-02 21:49:19] Application launched by: test
+[2025-12-02 21:49:19] Repo already exists, pulling latest changes.
+[2025-12-02 21:49:19] Starting evaluation session for test
+[2025-12-02 21:49:19] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 21:49:19] QCM: Selected 5 questions.
+[2025-12-02 21:49:19] Selected exercises: countvowel, mystery_word, digitswap, printreversealphabet, currency_converter
+[2025-12-02 21:49:19] Running QCM...
+[2025-12-02 21:49:22] QCM correct answer for q4.
+[2025-12-02 21:49:25] QCM correct answer for q1.
+[2025-12-02 21:49:27] QCM correct answer for q2.
+[2025-12-02 21:49:30] QCM correct answer for q5.
+[2025-12-02 21:49:37] QCM correct answer for q3.
+[2025-12-02 21:49:37] QCM finished with score 25.
+[2025-12-02 21:49:37] Scoring: QCM points set to 25
+[2025-12-02 21:49:37] QCM complete: 25 points
+[2025-12-02 21:49:37] Evaluating exercise: countvowel
+[2025-12-02 21:49:47] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/countvowel.py
+[2025-12-02 21:49:47] [CRITICAL ERROR] SandboxRunner.run() missing 1 required positional argument: 'input_data'
+[2025-12-02 21:54:08] Application launched by: test
+[2025-12-02 21:54:08] Repo already exists, pulling latest changes.
+[2025-12-02 21:54:08] Starting evaluation session for test
+[2025-12-02 21:54:08] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 21:54:08] QCM: Selected 5 questions.
+[2025-12-02 21:54:08] Selected exercises: mystery_word, mystery_word, mystery_word, ecommerce_paypal, currency_converter
+[2025-12-02 21:54:08] Running QCM...
+[2025-12-02 21:54:10] QCM wrong answer for q4. Expected C, got A.
+[2025-12-02 21:54:11] QCM correct answer for q1.
+[2025-12-02 21:54:12] QCM correct answer for q3.
+[2025-12-02 21:54:13] QCM wrong answer for q2. Expected B, got A.
+[2025-12-02 21:54:14] QCM wrong answer for q5. Expected C, got A.
+[2025-12-02 21:54:14] QCM finished with score 10.
+[2025-12-02 21:54:14] Scoring: QCM points set to 10
+[2025-12-02 21:54:14] QCM complete: 10 points
+[2025-12-02 21:54:14] Evaluating exercise: mystery_word
+[2025-12-02 21:55:49] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/mystery_word.py
+[2025-12-02 21:55:49] [CRITICAL ERROR] 'EvaluationEngine' object has no attribute '_load_tests'
+[2025-12-02 22:03:38] Application launched by: test
+[2025-12-02 22:03:38] Repo already exists, pulling latest changes.
+[2025-12-02 22:03:38] Starting evaluation session for test
+[2025-12-02 22:03:38] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 22:03:55] Scoring: QCM points set to 25
+[2025-12-02 22:03:55] QCM scored 25 pts
+[2025-12-02 22:05:17] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/fizzbuzz.py
+[2025-12-02 22:05:17] [CRITICAL ERROR] Missing tests.json for fizzbuzz
+[2025-12-02 22:05:45] Application launched by: test
+[2025-12-02 22:05:45] Repo already exists, pulling latest changes.
+[2025-12-02 22:05:45] Starting evaluation session for test
+[2025-12-02 22:05:45] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 22:05:49] Scoring: QCM points set to 10
+[2025-12-02 22:05:49] QCM scored 10 pts
+[2025-12-02 22:05:55] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/fizzbuzz.py
+[2025-12-02 22:05:55] [CRITICAL ERROR] Comparator.compare() takes 3 positional arguments but 4 were given
+[2025-12-02 22:07:27] Application launched by: test
+[2025-12-02 22:07:27] Repo already exists, pulling latest changes.
+[2025-12-02 22:07:27] Starting evaluation session for test
+[2025-12-02 22:07:27] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 22:07:31] Scoring: QCM points set to 5
+[2025-12-02 22:07:31] QCM scored 5 pts
+[2025-12-02 22:07:35] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/fizzbuzz.py
+[2025-12-02 22:07:35] [CRITICAL ERROR] [SECURITY] Invalid exercise name '1
+2
+Fizz
+4
+Buzz
+' (potential path traversal)
+[2025-12-02 22:09:39] Application launched by: test
+[2025-12-02 22:09:39] Repo already exists, pulling latest changes.
+[2025-12-02 22:09:39] Starting evaluation session for test
+[2025-12-02 22:09:39] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 22:09:43] Scoring: QCM points set to 10
+[2025-12-02 22:09:43] QCM scored 10 pts
+[2025-12-02 22:09:48] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/fizzbuzz.py
+[2025-12-02 22:09:48] [CRITICAL ERROR] [SECURITY] Attempt to access outside tests directory
+[2025-12-02 22:13:22] Application launched by: test
+[2025-12-02 22:13:22] Repo already exists, pulling latest changes.
+[2025-12-02 22:13:22] Starting evaluation session for test
+[2025-12-02 22:13:22] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 22:13:33] Scoring: QCM points set to 10
+[2025-12-02 22:13:33] QCM scored 10 pts
+[2025-12-02 22:13:50] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/fizzbuzz.py
+[2025-12-02 22:13:51] [CRITICAL ERROR] [SECURITY] Invalid exercise name '1
+2
+Fizz
+4
+Buzz
+' (potential path traversal)
+[2025-12-02 22:15:45] Application launched by: test
+[2025-12-02 22:15:45] Repo already exists, pulling latest changes.
+[2025-12-02 22:15:45] Starting evaluation session for test
+[2025-12-02 22:15:45] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 22:15:51] Scoring: QCM points set to 10
+[2025-12-02 22:15:51] QCM scored 10 pts
+[2025-12-02 22:15:56] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/fizzbuzz.py
+[2025-12-02 22:15:56] Scoring: +20 points (Exercises total = 20)
+[2025-12-02 22:16:40] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/printalphabet.py
+[2025-12-02 22:16:40] [CRITICAL ERROR] Missing tests.json for printalphabet
+[2025-12-02 22:18:19] Application launched by: test
+[2025-12-02 22:18:19] Repo already exists, pulling latest changes.
+[2025-12-02 22:18:19] Starting evaluation session for test
+[2025-12-02 22:18:19] Created/checked student directory: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test
+[2025-12-02 22:18:24] Scoring: QCM points set to 10
+[2025-12-02 22:18:24] QCM scored 10 pts
+[2025-12-02 22:19:02] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/fizzbuzz.py
+[2025-12-02 22:19:03] Scoring: +20 points (Exercises total = 20)
+[2025-12-02 22:19:46] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/printalphabet.py
+[2025-12-02 22:19:47] Runtime error: Traceback (most recent call last):
+  File "/Users/lehane/Documents/Auto-Evalutation-Tool/results/test/printalphabet.py", line 1, in <module>
+    n = int(input())
+            ^^^^^^^
+EOFError: EOF when reading a line
+
+[2025-12-02 22:19:47] Applying cooldown: 30s (attempt 1)
+[2025-12-02 22:20:22] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/printalphabet.py
+[2025-12-02 22:20:22] Wrong output.
+[2025-12-02 22:20:22] Applying cooldown: 60s (attempt 2)
+[2025-12-02 22:21:37] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/printalphabet.py
+[2025-12-02 22:21:37] Scoring: +12 points (Exercises total = 32)
+[2025-12-02 22:22:09] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/printreversealphabet.py
+[2025-12-02 22:22:09] Scoring: +12 points (Exercises total = 44)
+[2025-12-02 22:22:40] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/countvowel.py
+[2025-12-02 22:22:40] Wrong output.
+[2025-12-02 22:22:40] Applying cooldown: 30s (attempt 1)
+[2025-12-02 22:23:13] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/countvowel.py
+[2025-12-02 22:23:14] Scoring: +15 points (Exercises total = 59)
+[2025-12-02 22:23:49] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/digitswap.py
+[2025-12-02 22:23:49] Wrong output.
+[2025-12-02 22:23:49] Applying cooldown: 30s (attempt 1)
+[2025-12-02 22:25:10] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/digitswap.py
+[2025-12-02 22:25:10] Wrong output.
+[2025-12-02 22:25:10] Applying cooldown: 60s (attempt 2)
+[2025-12-02 22:26:26] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/digitswap.py
+[2025-12-02 22:26:26] Wrong output.
+[2025-12-02 22:26:26] Applying cooldown: 90s (attempt 3)
+[2025-12-02 22:28:38] Found submitted file: /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/digitswap.py
+[2025-12-02 22:28:39] Scoring: +15 points (Exercises total = 74)
+[2025-12-02 22:28:39] Scoring: Total = 84 (QCM=10, EXO=74)
+[2025-12-02 22:28:39] Saved results for test at /Users/lehane/Documents/Auto-Evalutation-Tool/results/test/results.json
+[2025-12-02 22:28:39] [GIT ERROR] No folder found for test
+[2025-12-02 22:31:27] Application launched by: admin

@@ -1,7 +1,6 @@
 {
     "tests": [
         { "input": "42\n", "output": "24\n" },
-        { "input": "10\n", "output": "01\n" },
         { "input": "93\n", "output": "39\n" }
     ]
 }

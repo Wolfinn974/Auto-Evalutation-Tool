@@ -46,7 +46,8 @@ class QCMEngine:
 
         if answer == correct_letter:
             log(f"QCM correct answer for {q['id']}.")
-            return q["points"]
+            pts = q.get("points", 0)
+            return pts
         else:
             log(f"QCM wrong answer for {q['id']}. Expected {correct_letter}, got {answer}.")
             return 0

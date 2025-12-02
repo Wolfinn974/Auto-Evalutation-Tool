@@ -24,7 +24,7 @@ class Comparator:
 
     def load_tests(self, exercise_name):
         """
-        Loads tests.json for the given exercise.
+        Loads test.json for the given exercise.
         """
         # SECURITY CHECK 1 — validate name
         if not re.match(self.SAFE_NAME_REGEX, exercise_name):
@@ -46,12 +46,12 @@ class Comparator:
                 f"[SECURITY] Exercise directory missing: {exo_dir}"
             )
 
-        # SECURITY CHECK 5 — ensure tests.json exists
-        path = os.path.join(exo_dir, "tests.json")
+        # SECURITY CHECK 5 — ensure test.json exists
+        path = os.path.join(exo_dir, "test.json")
 
         if not os.path.exists(path):
             raise FileNotFoundError(
-                f"[SECURITY] tests.json not found for exercise '{exercise_name}'"
+                f"[SECURITY] test.json not found for exercise '{exercise_name}'"
             )
 
         with open(path, "r", encoding="utf-8") as f:
@@ -83,28 +83,8 @@ class Comparator:
     # COMPARE STUDENT OUTPUT TO EXPECTED
     # -----------------------------------------
 
-    def compare(self, exercise_name, student_output):
-        """
-        Compare student output to all test cases.
-
-        student_output : string output of student's program
-        """
-
-        tests = self.load_tests(exercise_name)
-
-        for test in tests:
-
-            expected = self._normalize(test["output"])
-            got = self._normalize(student_output)
-
-            if got == expected:
-                # This test passed
-                log(f"Test passed for {exercise_name}.")
-                return True
-            else:
-                # If one test fails, comparison is KO
-                log(f"Test failed for {exercise_name}. Expected={repr(expected)}, Got={repr(got)}")
-                return False
-
-        return False  # default fail
+    def compare(self, got, expected):
+        got_norm = self._normalize(got)
+        exp_norm = self._normalize(expected)
+        return got_norm == exp_norm
     #TODO:    add strict mode

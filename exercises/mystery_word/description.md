@@ -10,7 +10,7 @@ Compter combien de lettres correspondent à un mot secret.
 
 ## Exemple
 Input :
-pytxon
+pytxoh
 
 Output :
 4

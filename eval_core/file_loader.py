@@ -67,7 +67,8 @@ class StudentFileManager:
     def wait_for_submission(self, exo_name):
         """
         Waits for the student to type 'submit'.
-        Then checks if a valid file appears in the folder.
+        Then checks once if a valid file exists.
+        If not found → return None so the engine can restart the prompt.
         """
 
         print("\n► When your file is ready, type: submit")
@@ -76,28 +77,23 @@ class StudentFileManager:
         # Wait for command
         while True:
             cmd = input("> ").strip().lower()
-
             if cmd == "submit":
                 break
-            else:
-                print("Type 'submit' when your solution file is ready.")
+            print("Type 'submit' when your solution file is ready.")
 
-        # After submit → look for expected filename
+        # After submit → check once
         expected_files = self._load_expected_filenames(exo_name)
 
-        # Look for matching file
-        while True:
-            for fname in os.listdir(self.student_dir):
-                if fname in expected_files:
-                    path = os.path.join(self.student_dir, fname)
+        for fname in os.listdir(self.student_dir):
+            if fname in expected_files:
+                path = os.path.join(self.student_dir, fname)
+                if os.path.isfile(path):
+                    log(f"Found submitted file: {path}")
+                    return path
 
-                    # SECURITY: ensure it's a regular file
-                    if os.path.isfile(path):
-                        log(f"Found submitted file: {path}")
-                        return path
-
-            print("\n⚠️ File not found. Make sure you placed:", expected_files)
-            time.sleep(1)   # mini pause to avoid spam
+        # If no file found → return None instead of looping forever
+        print("\n⚠️ File not found. Make sure you placed:", expected_files)
+        return None
 
     # ------------------------------------------------
     # SAVE RESULTS JSON
